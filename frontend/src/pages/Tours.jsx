@@ -10,19 +10,20 @@ import { Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 
 const Tours = () => {
-  const [pageCount, setPageCount] = useState(0);
-  const [page, setPage] = useState(0);
+  const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const pages = Math.ceil(tourData.length / 4);
-    setPageCount(pages);
-  }, [page]);
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
 
-  // Filter data berdasarkan kategori dari title
   const gunungTours = tourData.filter(tour => tour.title.toLowerCase().includes("gunung"));
   const pantaiTours = tourData.filter(tour => tour.title.toLowerCase().includes("pantai"));
-  const curugTours = tourData.filter(tour => tour.title.toLowerCase().includes("curug") || tour.title.toLowerCase().includes("air terjun") || tour.title.toLowerCase().includes("sindang"));
+  const curugTours = tourData.filter(tour => 
+    tour.title.toLowerCase().includes("curug") || 
+    tour.title.toLowerCase().includes("air terjun") || 
+    tour.title.toLowerCase().includes("sindang")
+  );
   const bukitTours = tourData.filter(tour => tour.title.toLowerCase().includes("bukit"));
 
   const renderTours = (tours) => (
@@ -51,23 +52,47 @@ const Tours = () => {
     </>
   );
 
+  const lowerSearch = searchTerm.toLowerCase();
+
   return (
     <>
       <CommonSection title={'All Tours'} />
       <section>
         <Container>
           <Row>
-            <SearchBar />
+            <SearchBar onSearch={handleSearch} />
           </Row>
         </Container>
       </section>
 
       <section className="pt-0">
         <Container>
-          {renderSection("Pantai", "/pantai", pantaiTours)}
-          {renderSection("Pegunungan", "/gunung", gunungTours)}
-          {renderSection("Air Terjun", "/curug", curugTours)}
-          {renderSection("Bukit", "/bukit", bukitTours)}
+          {lowerSearch === "" && (
+            <>
+              {renderSection("Pantai", "/pantai", pantaiTours)}
+              {renderSection("Pegunungan", "/gunung", gunungTours)}
+              {renderSection("Air Terjun", "/curug", curugTours)}
+              {renderSection("Bukit", "/bukit", bukitTours)}
+            </>
+          )}
+
+          {lowerSearch === "pantai" && renderSection("Pantai", "/pantai", pantaiTours)}
+          {lowerSearch === "gunung" && renderSection("Pegunungan", "/gunung", gunungTours)}
+          {(lowerSearch === "curug" || lowerSearch === "air terjun" || lowerSearch === "sindang") &&
+            renderSection("Air Terjun", "/curug", curugTours)}
+          {lowerSearch === "bukit" && renderSection("Bukit", "/bukit", bukitTours)}
+
+          {lowerSearch &&
+            lowerSearch !== "pantai" &&
+            lowerSearch !== "gunung" &&
+            lowerSearch !== "curug" &&
+            lowerSearch !== "air terjun" &&
+            lowerSearch !== "sindang" &&
+            lowerSearch !== "bukit" && (
+              <Row className="text-center">
+                <Col><h5>Kategori “{searchTerm}” tidak ditemukan.</h5></Col>
+              </Row>
+            )}
         </Container>
       </section>
 

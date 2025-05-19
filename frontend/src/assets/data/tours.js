@@ -1,11 +1,23 @@
-import tourImg01 from "../images/tour-img02.jpeg";
-import tourImg02 from "../images/tour-img02.jpg";
-import tourImg03 from "../images/karangtawulan.jpg";
-import tourImg04 from "../images/sindangkerta.webp";
-import tourImg05 from "../images/curug dengdeng.webp";
-import tourImg06 from "../images/sawer.jpg";
-import tourImg07 from "../images/kacapi.jpeg";
-import tourImg08 from "../images/cisanta.jpg";
+import tourImg01 from "../images/gakunggung.png";
+import tourImg02 from "../images/kedok.png";
+import tourImg03 from "../images/bongkok.png";
+import tourImg04 from "../images/pin.png";
+import tourImg05 from "../images/cakrabuana.png";
+import tourImg06 from "../images/parpon.png";
+import tourImg07 from "../images/cipatujah.png";
+import tourImg08 from "../images/karangtawulan.png";
+import tourImg09 from "../images/bubujung.png";
+import tourImg010 from "../images/sindangkerta.png";
+import tourImg011 from "../images/dengdeng.png";
+import tourImg012 from "../images/sawer.png";
+import tourImg013 from "../images/badak.png";
+import tourImg014 from "../images/panetean.png";
+import tourImg015 from "../images/kacapi.png";
+import tourImg016 from "../images/cisanta.png";
+import tourImg017 from "../images/garuda.png";
+import tourImg018 from "../images/pasirpeer.png";
+
+
 
 const tours = [
   {
@@ -132,7 +144,10 @@ const tours = [
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
-    
+      {
+        name: "jhon doe",
+        rating: 4.6,
+      },
     ],
     avgRating: 4.5,
     photo: tourImg07,
@@ -148,10 +163,13 @@ const tours = [
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
-     
+      {
+        name: "jhon doe",
+        rating: 4.6,
+      },
     ],
     avgRating: 4.5,
-    photo: tourImg03,
+    photo: tourImg08,
     featured: false,
   },
   {
@@ -163,11 +181,14 @@ const tours = [
     price: 99,
     maxGroupSize: 8,
     desc: "this is the description",
-    reviews: [
-     
+   reviews: [
+      {
+        name: "jhon doe",
+        rating: 4.6,
+      },
     ],
     avgRating: 4.5,
-    photo: tourImg03,
+    photo: tourImg09,
     featured: false,
   },
   {
@@ -180,10 +201,13 @@ const tours = [
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
-     
+      {
+        name: "jhon doe",
+        rating: 4.6,
+      },
     ],
     avgRating: 4.5,
-    photo: tourImg03,
+    photo: tourImg010,
     featured: false,
   },
   {
@@ -196,10 +220,13 @@ const tours = [
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
-     
+      {
+        name: "jhon doe",
+        rating: 4.6,
+      },
     ],
     avgRating: 4.5,
-    photo: tourImg03,
+    photo: tourImg011,
     featured: false,
   },
   {
@@ -212,10 +239,13 @@ const tours = [
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
-     
+      {
+        name: "jhon doe",
+        rating: 4.6,
+      },
     ],
     avgRating: 4.5,
-    photo: tourImg03,
+    photo: tourImg012,
     featured: false,
   },
   {
@@ -228,10 +258,13 @@ const tours = [
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
-     
+      {
+        name: "jhon doe",
+        rating: 4.6,
+      },
     ],
     avgRating: 4.5,
-    photo: tourImg03,
+    photo: tourImg013,
     featured: false,
   },
   {
@@ -244,10 +277,13 @@ const tours = [
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
-     
+      {
+        name: "jhon doe",
+        rating: 4.6,
+      },
     ],
     avgRating: 4.5,
-    photo: tourImg03,
+    photo: tourImg014,
     featured: false,
   },
   {
@@ -259,11 +295,14 @@ const tours = [
     price: 99,
     maxGroupSize: 8,
     desc: "this is the description",
-    reviews: [
-     
+   reviews: [
+      {
+        name: "jhon doe",
+        rating: 4.6,
+      },
     ],
     avgRating: 4.5,
-    photo: tourImg03,
+    photo: tourImg015,
     featured: false,
   },
   {
@@ -276,10 +315,13 @@ const tours = [
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
-     
+      {
+        name: "jhon doe",
+        rating: 4.6,
+      },
     ],
     avgRating: 4.5,
-    photo: tourImg03,
+    photo: tourImg016,
     featured: false,
   },
   {
@@ -292,10 +334,13 @@ const tours = [
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
-     
+      {
+        name: "jhon doe",
+        rating: 4.6,
+      },
     ],
     avgRating: 4.5,
-    photo: tourImg03,
+    photo: tourImg017,
     featured: false,
   },
   {
@@ -308,10 +353,13 @@ const tours = [
     maxGroupSize: 8,
     desc: "this is the description",
     reviews: [
-     
+      {
+        name: "jhon doe",
+        rating: 4.6,
+      },
     ],
     avgRating: 4.5,
-    photo: tourImg03,
+    photo: tourImg018,
     featured: false,
   },
   
