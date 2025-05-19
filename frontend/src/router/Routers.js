@@ -9,7 +9,7 @@ import Register from './../pages/Register';
 import SearchResultList from './../pages/SearchResultList';
 import ThankYou from "../pages/ThankYou";
 import Tentangkami from "../pages/Tentangkami";
-import Pantai from '../pages/Pantai'; // benar, sesuai nama file
+import Pantai from "../pages/Pantai"; // benar, sesuai nama file
 
 const Routers = () => {
     return (
@@ -22,7 +22,7 @@ const Routers = () => {
         <Route path='/register' element={<Register/>}/>
         <Route path='/tentangkami' element={<Tentangkami/>}/>
         <Route path='/thank-you' element={<ThankYou/>}/>
-        <Route path='/pantai' element={<Pantai/>}/>
+        <Route path='/Pantai' element={<Pantai/>}/>
         <Route path='/tour/search' element={<SearchResultList/>}/>
 
     </Routes>

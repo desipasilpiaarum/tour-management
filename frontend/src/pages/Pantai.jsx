@@ -52,11 +52,11 @@ const Pantai = () => {
 
   return (
     <>
-      <CommonSection title={'All Tours'} />
+      <CommonSection title={'Pantai'} />
       <section>
         <Container>
           <Row>
-            <SearchBar />
+           
           </Row>
         </Container>
       </section>

@@ -4,12 +4,12 @@ import './footer.css'
 import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 
 import { Link } from 'react-router-dom';
-import logo from '../../assets/images/logo.png';
+import logo from '../../assets/images/logokita.png';
 
 const quick__links = [
-    { path: "/home", display: "Home" },
-    { path: "/about", display: "About" },
-    { path: "/tours", display: "Tours" },
+    { path: "/home", display: "Beranda" },
+    { path: "/tours", display: "Wisata" },
+    { path: "/Tentangkami", display: "Tentang Kita" },
 ];
 const quick__links2 = [
 
