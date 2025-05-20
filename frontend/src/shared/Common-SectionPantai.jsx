@@ -1,11 +1,11 @@
 import React from "react";
-import './common-section-curug.css'
+import './common-section-pantai.css'
 import { Container, Row, Col } from 'reactstrap';
 
 
-const CommonSectionCurug = ({ title }) => {
+const CommonSectionPantai = ({ title }) => {
     return (
-        <section className="common__section_curug">
+        <section className="common__section_pantai">
             <Container>
                 <Row>
                     <Col lg='12'>
@@ -17,4 +17,4 @@ const CommonSectionCurug = ({ title }) => {
     );
 };
 
-export default CommonSectionCurug;
+export default CommonSectionPantai;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom"; // Tambahkan ini
-import CommonSection from "../shared/CommonSection";
+import CommonSectionPantai from "../shared/Common-SectionPantai";
 import "../styles/tour.css";
 import tourData from '../assets/data/tours';
 import TourCard from '../shared/TourCard';
@@ -38,21 +38,14 @@ const Pantai = () => {
 
   const renderSection = (title, link, data) => (
     <>
-      <Row className="align-items-center justify-content-between mb-2 mt-5">
-        <Col><h2>{title}</h2></Col>
-        <Col className="text-end">
-          <Link to={link}>
-            <button className="btn btn-primary btn-sm">See All</button>
-          </Link>
-        </Col>
-      </Row>
+      <Row className="align-items-center justify-content-between mb-2 mt-5"></Row>
       {renderTours(data)}
     </>
   );
 
   return (
     <>
-      <CommonSection title={'Pantai'} />
+      <CommonSectionPantai title={'Pantai'} />
       <section>
         <Container>
           <Row>
