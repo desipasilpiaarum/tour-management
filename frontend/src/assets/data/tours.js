@@ -345,7 +345,7 @@ const tours = [
   },
   {
     id: "018",
-    title: "Bukkit Pasir Peer",
+    title: "Bukit Pasir Peer",
     city: "Tasikmalaya",
     distance: 500,
     address: 'Somewhere',

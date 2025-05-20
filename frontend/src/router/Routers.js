@@ -10,8 +10,9 @@ import SearchResultList from './../pages/SearchResultList';
 import ThankYou from "../pages/ThankYou";
 import Tentangkami from "../pages/Tentangkami";
 import Pantai from "../pages/Pantai";
-import Gunung from './../pages/Gunung'; 
+import Gunung from './../pages/Gunung';
 import Curug from "../pages/Curug";
+import Bukit from "../pages/Bukit";
 
 const Routers = () => {
     return (
@@ -27,6 +28,7 @@ const Routers = () => {
             <Route path='/pantai' element={<Pantai />} />
             <Route path='/gunung' element={<Gunung />} />
             <Route path='/curug' element={<Curug />} />
+            <Route path='/bukit' element={<Bukit />} />
             <Route path='/tour/search' element={<SearchResultList />} />
         </Routes>
     );

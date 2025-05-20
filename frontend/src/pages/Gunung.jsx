@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import CommonSection from "../shared/CommonSection";
 import "../styles/tour.css";
 import tourData from '../assets/data/tours';
 import TourCard from '../shared/TourCard';
 import SearchBar from '../shared/SearchBar';
 import Newseletter from '../shared/Newseletter';
 import { Container, Row, Col } from "reactstrap";
+import CommonSectionGunung from "../shared/CommonSectionGunung";
 
 const Gunung = () => {
   const [pageCount, setPageCount] = useState(0);
@@ -51,7 +51,7 @@ const Gunung = () => {
 
   return (
     <>
-      <CommonSection title={'Gunung'} />
+      <CommonSectionGunung title={'PEGUNUNGAN'} />
       <section>
         <Container>
           <Row>

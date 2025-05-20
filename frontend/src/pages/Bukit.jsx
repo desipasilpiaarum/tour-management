@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // Tambahkan ini
-import CommonSectionPantai from "../shared/Common-SectionPantai";
-import "../styles/tour.css";
+import { useNavigate, Link } from "react-router-dom";import "../styles/tour.css";
 import tourData from '../assets/data/tours';
 import TourCard from '../shared/TourCard';
-import SearchBar from '../shared/SearchBar';
 import Newseletter from '../shared/Newseletter';
 import { Container, Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
+import CommonSectionBukit from "../shared/CommonSectionBukit";
 
-const Pantai = () => {
+const Bukit = () => {
   const [pageCount, setPageCount] = useState(0);
   const [page, setPage] = useState(0);
   const navigate = useNavigate();
@@ -19,10 +16,10 @@ const Pantai = () => {
     setPageCount(pages);
   }, [page]);
 
-  // Filter data berdasarkan kategori dari title
-  
-  const pantaiTours = tourData.filter(tour => tour.title.toLowerCase().includes("pantai"));
-  
+  // ✅ Ganti nama variabel agar sesuai
+  const bukitTours = tourData.filter(tour =>
+    tour.title.toLowerCase().includes("bukit")
+  );
 
   const renderTours = (tours) => (
     <Row>
@@ -45,19 +42,12 @@ const Pantai = () => {
 
   return (
     <>
-      <CommonSectionPantai title={'PANTAI'} />
-      <section>
-        <Container>
-          <Row>
-           
-          </Row>
-        </Container>
-      </section>
+    
+      <CommonSectionBukit title={'BUKIT'} />
 
       <section className="pt-0">
         <Container>
-          {renderSection("Pantai", "/pantai", pantaiTours)}
-         
+          {renderSection("Bukit", "/bukit", bukitTours)}
         </Container>
       </section>
 
@@ -66,4 +56,4 @@ const Pantai = () => {
   );
 };
 
-export default Pantai;
+export default Bukit;
