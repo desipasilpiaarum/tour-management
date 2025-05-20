@@ -55,8 +55,7 @@ const Gunung = () => {
       <section>
         <Container>
           <Row>
-            {/* Tambahkan SearchBar jika ingin */}
-            <SearchBar />
+           
           </Row>
         </Container>
       </section>
