@@ -1,5 +1,5 @@
 import React from "react"; 
-import {Routes, Route, Navigate} from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Home from './../pages/Home';
 import Tours from './../pages/Tours';
@@ -9,23 +9,24 @@ import Register from './../pages/Register';
 import SearchResultList from './../pages/SearchResultList';
 import ThankYou from "../pages/ThankYou";
 import Tentangkami from "../pages/Tentangkami";
-import Pantai from "../pages/Pantai"; // benar, sesuai nama file
+import Pantai from "../pages/Pantai"; 
+import Gunung from './../pages/Gunung'; // ✅ Import Gunung ditambahkan
 
 const Routers = () => {
     return (
-    <Routes>
-        <Route path='/' element={<Navigate to='/home'/>} />
-        <Route path='/home' element={<Home/>}/>
-        <Route path='/tours' element={<Tours/>}/>
-        <Route path='/tour/:id' element={<TourDetails/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/tentangkami' element={<Tentangkami/>}/>
-        <Route path='/thank-you' element={<ThankYou/>}/>
-        <Route path='/Pantai' element={<Pantai/>}/>
-        <Route path='/tour/search' element={<SearchResultList/>}/>
-
-    </Routes>
+        <Routes>
+            <Route path='/' element={<Navigate to='/home' />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/tours' element={<Tours />} />
+            <Route path='/tour/:id' element={<TourDetails />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/register' element={<Register />} />
+            <Route path='/tentangkami' element={<Tentangkami />} />
+            <Route path='/thank-you' element={<ThankYou />} />
+            <Route path='/pantai' element={<Pantai />} /> {/* disarankan pakai lowercase path */}
+            <Route path='/gunung' element={<Gunung />} /> {/* ✅ sudah diperbaiki */}
+            <Route path='/tour/search' element={<SearchResultList />} />
+        </Routes>
     );
 };
 

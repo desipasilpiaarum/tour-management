@@ -70,14 +70,14 @@ const Tours = () => {
           {lowerSearch === "" && (
             <>
               {renderSection("Pantai", "/pantai", pantaiTours)}
-              {renderSection("Pegunungan", "/gunung", gunungTours)}
+              {renderSection("gunung", "/gunung", gunungTours)}
               {renderSection("Air Terjun", "/curug", curugTours)}
               {renderSection("Bukit", "/bukit", bukitTours)}
             </>
           )}
 
           {lowerSearch === "pantai" && renderSection("Pantai", "/pantai", pantaiTours)}
-          {lowerSearch === "gunung" && renderSection("Pegunungan", "/gunung", gunungTours)}
+          {lowerSearch === "gunung" && renderSection("gunung", "/gunung", gunungTours)}
           {(lowerSearch === "curug" || lowerSearch === "air terjun" || lowerSearch === "sindang") &&
             renderSection("Air Terjun", "/curug", curugTours)}
           {lowerSearch === "bukit" && renderSection("Bukit", "/bukit", bukitTours)}
