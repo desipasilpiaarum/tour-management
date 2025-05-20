@@ -1,4 +1,4 @@
-import React from "react"; 
+import React from "react";
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Home from './../pages/Home';
@@ -9,8 +9,9 @@ import Register from './../pages/Register';
 import SearchResultList from './../pages/SearchResultList';
 import ThankYou from "../pages/ThankYou";
 import Tentangkami from "../pages/Tentangkami";
-import Pantai from "../pages/Pantai"; 
-import Gunung from './../pages/Gunung'; // ✅ Import Gunung ditambahkan
+import Pantai from "../pages/Pantai";
+import Gunung from './../pages/Gunung'; 
+import Curug from "../pages/Curug";
 
 const Routers = () => {
     return (
@@ -23,8 +24,9 @@ const Routers = () => {
             <Route path='/register' element={<Register />} />
             <Route path='/tentangkami' element={<Tentangkami />} />
             <Route path='/thank-you' element={<ThankYou />} />
-            <Route path='/pantai' element={<Pantai />} /> {/* disarankan pakai lowercase path */}
-            <Route path='/gunung' element={<Gunung />} /> {/* ✅ sudah diperbaiki */}
+            <Route path='/pantai' element={<Pantai />} />
+            <Route path='/gunung' element={<Gunung />} />
+            <Route path='/curug' element={<Curug />} />
             <Route path='/tour/search' element={<SearchResultList />} />
         </Routes>
     );
