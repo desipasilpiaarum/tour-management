@@ -1,35 +1,50 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import CommonSection from "../shared/CommonSection";
-import "../styles/tour.css";
-import tourData from '../assets/data/tours';
-import TourCard from '../shared/TourCard';
-import SearchBar from '../shared/SearchBar';
-import Newseletter from '../shared/Newseletter';
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
-import { Link } from "react-router-dom";
+import CommonSection from "../shared/CommonSection";
+import SearchBar from "../shared/SearchBar";
+import TourCard from "../shared/TourCard";
+import Newseletter from "../shared/Newseletter";
+import tourData from "../assets/data/tours";
+import "../styles/tour.css";
 
 const Tours = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
   const handleSearch = (term) => {
     setSearchTerm(term);
   };
 
-  const gunungTours = tourData.filter(tour => tour.title.toLowerCase().includes("gunung"));
-  const pantaiTours = tourData.filter(tour => tour.title.toLowerCase().includes("pantai"));
-  const curugTours = tourData.filter(tour => 
-    tour.title.toLowerCase().includes("curug") || 
-    tour.title.toLowerCase().includes("air terjun") || 
+  
+  const gunungToursAll = tourData.filter(tour =>
+    tour.title.toLowerCase().includes("gunung")
+  );
+
+  const pantaiToursAll = tourData.filter(tour =>
+    tour.title.toLowerCase().includes("pantai")
+  );
+
+  const curugToursAll = tourData.filter(tour =>
+    tour.title.toLowerCase().includes("curug") ||
+    tour.title.toLowerCase().includes("air terjun") ||
     tour.title.toLowerCase().includes("sindang")
   );
-  const bukitTours = tourData.filter(tour => tour.title.toLowerCase().includes("bukit"));
+
+  const bukitToursAll = tourData.filter(tour =>
+    tour.title.toLowerCase().includes("bukit")
+  );
+
+
+  const gunungTours = gunungToursAll.slice(0, 4);
+  const pantaiTours = pantaiToursAll.slice(0, 4);
+  const curugTours = curugToursAll.slice(0, 4);
+  const bukitTours = bukitToursAll.slice(0, 4);
 
   const renderTours = (tours) => (
     <Row>
-      {tours.map(tour => (
-        <Col lg='3' className="mb-4" key={tour.id}>
+      {tours.map((tour) => (
+        <Col lg="3" className="mb-4" key={tour.id}>
           <div onClick={() => navigate(`/tour/${tour.id}`)} style={{ cursor: "pointer" }}>
             <TourCard tour={tour} />
           </div>
@@ -56,7 +71,9 @@ const Tours = () => {
 
   return (
     <>
-      <CommonSection title={'All Tours'} />
+      <CommonSection title="All Tours" />
+
+      {/* Search */}
       <section>
         <Container>
           <Row>
@@ -65,32 +82,33 @@ const Tours = () => {
         </Container>
       </section>
 
+      {/* List Wisata */}
       <section className="pt-0">
         <Container>
+          {/* Jika tidak sedang mencari */}
           {lowerSearch === "" && (
             <>
               {renderSection("Pantai", "/pantai", pantaiTours)}
-              {renderSection("gunung", "/gunung", gunungTours)}
+              {renderSection("Pegunungan", "/gunung", gunungTours)}
               {renderSection("Air Terjun", "/curug", curugTours)}
               {renderSection("Bukit", "/bukit", bukitTours)}
             </>
           )}
 
-          {lowerSearch === "pantai" && renderSection("Pantai", "/pantai", pantaiTours)}
-          {lowerSearch === "gunung" && renderSection("gunung", "/gunung", gunungTours)}
+          {/* Jika ada pencarian */}
+          {lowerSearch === "pantai" && renderSection("Pantai", "/pantai", pantaiToursAll)}
+          {lowerSearch === "gunung" && renderSection("Pegunungan", "/gunung", gunungToursAll)}
           {(lowerSearch === "curug" || lowerSearch === "air terjun" || lowerSearch === "sindang") &&
-            renderSection("Air Terjun", "/curug", curugTours)}
-          {lowerSearch === "bukit" && renderSection("Bukit", "/bukit", bukitTours)}
+            renderSection("Air Terjun", "/curug", curugToursAll)}
+          {lowerSearch === "bukit" && renderSection("Bukit", "/bukit", bukitToursAll)}
 
+          {/* Jika kategori tidak ditemukan */}
           {lowerSearch &&
-            lowerSearch !== "pantai" &&
-            lowerSearch !== "gunung" &&
-            lowerSearch !== "curug" &&
-            lowerSearch !== "air terjun" &&
-            lowerSearch !== "sindang" &&
-            lowerSearch !== "bukit" && (
+            !["pantai", "gunung", "curug", "air terjun", "sindang", "bukit"].includes(lowerSearch) && (
               <Row className="text-center">
-                <Col><h5>Kategori “{searchTerm}” tidak ditemukan.</h5></Col>
+                <Col>
+                  <h5>Kategori “{searchTerm}” tidak ditemukan.</h5>
+                </Col>
               </Row>
             )}
         </Container>

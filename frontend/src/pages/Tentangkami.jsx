@@ -33,7 +33,7 @@ const TentangKami = () => {
                     Bersama wisata kami, ajaklah keluarga serta teman-teman Anda untuk menikmati keindahan wisata yang ada di Tasikmalaya.
                 </p>
 
-                {/* Tombol Kategori */}
+                
                 <div className="categories my-4">
                     <button className="category-button">Pegunungan</button>
                     <button className="category-button">Pantai</button>
@@ -41,21 +41,21 @@ const TentangKami = () => {
                     <button className="category-button">Bukit</button>
                 </div>
 
-                {/* Galeri Gambar */}
+                
                 <div className="image-gallery d-flex justify-content-center gap-3 flex-wrap">
                     <img src="https://via.placeholder.com/300x200" alt="Wisata 1" />
                     <img src="https://via.placeholder.com/300x200" alt="Wisata 2" />
                     <img src="https://via.placeholder.com/300x200" alt="Wisata 3" />
                 </div>
 
-                {/* Peta Lokasi */}
+                
                 <h2 className="mt-5">Lokasi Wisata Tasikmalaya</h2>
                 <div className="map mt-3">
                     <img src="https://via.placeholder.com/600x400" alt="Peta Tasikmalaya" />
                 </div>
             </section>
 
-            {/* Section Berlangganan */}
+           
             <Newseletter />
         </>
     );
