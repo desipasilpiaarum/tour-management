@@ -1,79 +1,64 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Container, Row, Col, Form, FormGroup, Button } from "reactstrap";
-import "../styles/login.css";
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
+import CommonSection from "../shared/CommonSection";
+import Newseletter from "../shared/Newseletter";
+import "../styles/tentang.css";
 
-import loginImg from "../assets/images/login.png";
-import userIcon from "../assets/images/user.png";
-
-const Tentangkami = () => {
-    const [credentials, setCredentials] = useState({
-        email: "",
-        password: "",
-    });
-
-    const handleChange = (e) => {
-        setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log("Login data:", credentials);
-        // Tambahkan logika autentikasi di sini
-    };
-
+const TentangKami = () => {
     return (
-        <section>
-            <Container>
-                <Row>
-                    <Col lg="8" className="m-auto">
-                        <div className="login__container d-flex justify-content-between">
-                            <div className="login__img">
-                                <img src={loginImg} alt="Login" />
-                            </div>
-                            <div className="login__form">
-                                <div className="user">
-                                    <img src={userIcon} alt="User Icon" />
-                                </div>
-                                <h2>Login</h2>
+        <>
+           
+            <CommonSection title="Tentang Kami" />
 
-                                <Form onSubmit={handleSubmit}>
-                                    <FormGroup>
-                                        <input
-                                            type="email"
-                                            placeholder="Email"
-                                            required
-                                            id="email"
-                                            value={credentials.email}
-                                            onChange={handleChange}
-                                        />
-                                    </FormGroup>
+           
+            <section>
+                <Container>
+                    <Row>
+                        <Col>
+                            <p className="text-center mt-4">
+                                Selamat datang di <strong>Wisata Kita</strong>! Kami adalah tim pengembang yang berdedikasi untuk menyediakan platform informasi wisata yang menarik, mudah diakses, dan terpercaya. Wisata Kita hadir untuk membantu Anda menemukan destinasi wisata terbaik seperti pantai, gunung, curug, dan bukit di berbagai daerah dengan lebih mudah dan menyenangkan.
+                            </p>
+                        </Col>
+                    </Row>
+                </Container>
+            </section>
 
-                                    <FormGroup>
-                                        <input
-                                            type="password"
-                                            placeholder="Password"
-                                            required
-                                            id="password"
-                                            value={credentials.password}
-                                            onChange={handleChange}
-                                        />
-                                    </FormGroup>
-                                    <Button className="btn secondary__btn auth__btn" type="submit">
-                                        Login
-                                    </Button>
-                                </Form>
+            {/* Section Perkenalan Trip */}
+            <section className="container text-center my-5">
+                <h1>
+                    Memperkenalkan Trip <br />
+                    <span className="highlight">Wisata Terbaik!</span>
+                </h1>
+                <p>
+                    Bersama wisata kami, ajaklah keluarga serta teman-teman Anda untuk menikmati keindahan wisata yang ada di Tasikmalaya.
+                </p>
 
-                                <p>
-                                    Don't have an account? <Link to="/register">Create an account</Link>
-                                </p>
-                            </div>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
-        </section>
+                {/* Tombol Kategori */}
+                <div className="categories my-4">
+                    <button className="category-button">Pegunungan</button>
+                    <button className="category-button">Pantai</button>
+                    <button className="category-button">Air Terjun</button>
+                    <button className="category-button">Bukit</button>
+                </div>
+
+                {/* Galeri Gambar */}
+                <div className="image-gallery d-flex justify-content-center gap-3 flex-wrap">
+                    <img src="https://via.placeholder.com/300x200" alt="Wisata 1" />
+                    <img src="https://via.placeholder.com/300x200" alt="Wisata 2" />
+                    <img src="https://via.placeholder.com/300x200" alt="Wisata 3" />
+                </div>
+
+                {/* Peta Lokasi */}
+                <h2 className="mt-5">Lokasi Wisata Tasikmalaya</h2>
+                <div className="map mt-3">
+                    <img src="https://via.placeholder.com/600x400" alt="Peta Tasikmalaya" />
+                </div>
+            </section>
+
+            {/* Section Berlangganan */}
+            <Newseletter />
+        </>
     );
 };
 
-export default Tentangkami;
+export default TentangKami;

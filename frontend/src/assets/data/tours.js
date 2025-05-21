@@ -24,7 +24,7 @@ const tours = [
     id: "01",
     title: "Gunung Galunggung",
     city: "Tasikmalya",
-    distance: 300,
+    distance: 70,
     address: 'Somewhere',
     price: 99,
     maxGroupSize: 10,
@@ -193,7 +193,7 @@ const tours = [
   },
   {
     id: "010",
-    title: "Pantai Sindang Kerta",
+    title: "Pantai SindangKerta",
     city: "Tasikmalaya",
     distance: 500,
     address: 'Somewhere',

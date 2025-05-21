@@ -96,9 +96,7 @@ const Footer = () => {
                         </ListGroup>
                     </Col>
 
-                    <Col lg='12' className="text-center pt-5">
-                    <p className="copyright">Copyright {year} By De sipa silpia arum</p>
-                    </Col>
+                  
                 </Row>
             </Container>
         </footer>

@@ -116,8 +116,10 @@ const Home = () => {
                 <Container>
                     <Row>
                         <Col lg="12" className="mb-5">
-                            <Subtitle subtitle={"Jelajahi"} />
+                             <div className="experience__content">
+                                <h1>Jelajahi</h1>
                             <h2 className="featured__tour-title">Wisata Unggulan Kita</h2>
+                            </div>
                         </Col>
                         <FeatureTourList />
                     </Row>
