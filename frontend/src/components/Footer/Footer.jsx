@@ -72,7 +72,7 @@ const Footer = () => {
                                         Address:
                                        </h6>
 
-                                       <p className="mb-0">Tasikmalaya, Indonesia</p>
+                                       <p className="mb-0">Tasikmalaya</p>
                                     </ListGroupItem>
 
                                     <ListGroupItem className="ps-0 border-0 d-flex align-items-center gap-3">

@@ -126,3 +126,30 @@
     font-size: 2.3rem;
     margin-top: 1rem;
 }
+.content {
+  background-color: white;
+  padding: 20px;
+}
+.subtitle {
+  font-size: 24px;
+  margin: 20px 0;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.trip-button {
+  background-color: #008cba; /* Warna tombol */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+.trip-button:hover {
+  background-color: #005f8a; /* Warna tombol saat hover */
+}
