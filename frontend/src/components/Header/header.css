@@ -49,3 +49,43 @@ width: 50%;
     z-index: 999;
 
 }
+/* Tombol hamburger (mobile menu) */
+.mobile__menu {
+  font-size: 1.8rem;
+  color: #333;
+  cursor: pointer;
+  display: none;
+}
+
+.navigation {
+  display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  .mobile__menu {
+    display: block;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    width: 200px;
+  }
+
+  .navigation.show__menu {
+    display: flex;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
