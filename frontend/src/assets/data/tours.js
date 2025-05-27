@@ -26,9 +26,9 @@ const tours = [
     city: "Tasikmalya",
     distance: 70,
     address: 'Somewhere',
-    price: 99,
-    maxGroupSize: 10,
-    desc: "this is the description",
+    price: 20,
+    
+    desc: "Gunung Galunggung merupakan gunung api dengan ketinggian 2.168 meter diatas permukaan laut, dengan puncak tertingginya yakni Puncak beuti Canar yang memiliki keitnggian 2240 mdpl. Gunung ini terletak sekitar 17 km dari ppusat kota Tasikmalaya, Jawa Barat",
     reviews: [
       {
         name: "jhon doe",

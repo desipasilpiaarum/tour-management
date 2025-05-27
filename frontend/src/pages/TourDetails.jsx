@@ -18,7 +18,7 @@ const TourDetails = () => {
 
     const tour = tourData.find(tour => tour.id === id);
 
-    const { photo, title, desc, price, address, reviews, city, distance, maxGroupSize } =
+    const { photo, title, desc, price, address, reviews, city, distance, } =
         tour;
 
     const { totalrating, avgRating } = calculateAvgRating
@@ -28,7 +28,7 @@ const TourDetails = () => {
     const options = { day: 'numeric', month: 'long', year: 'numeric' };
 
     // sumbit request to server
-    const sumbitHandler = e=>{
+    const sumbitHandler = e => {
         e.preventDefault()
         const reviewsText = reviewsMsgref.current.value;
 
@@ -57,7 +57,7 @@ const TourDetails = () => {
                                     <div className="d-flex align-items-center gap-5">
 
                                         <span className="tour__rating d-flex align-items-center gap-1">
-                                            <i class="ri-star-s-fill" style={{ 'color': "var(--secondary-color)" }}> </i>
+                                            <i class="ri-star-s-fill" style={{ 'color': "yellow" }}> </i>
                                             {avgRating === 0 ? null :
                                                 avgRating}
                                             {totalrating === 0 ? (
@@ -73,9 +73,8 @@ const TourDetails = () => {
                                     </div>
                                     <div className="tour__extra-details">
                                         <span><i class="ri-map-pin-2-line"></i>{city}</span>
-                                        <span><i class="ri-money-dollar-circle-line"></i> ${price} / per person</span>
+                                        <span><i class="ri-money-dollar-circle-line"></i> Rp{price} / per person</span>
                                         <span><i class="ri-map-pin-line"></i> {distance} k/m</span>
-                                        <span><i class="ri-group-line"></i>{maxGroupSize} pople </span>
                                     </div>
                                     <h5>Description</h5>
                                     <p>{desc}</p>
@@ -86,19 +85,29 @@ const TourDetails = () => {
                                     <h4>Reviews ({reviews?.lenght} reviews)</h4>
 
                                     <Form onSumbit={sumbitHandler}>
-                                        <div className="d-flex align-items-center gap-3 mb-4
-                                        rating__group">
-                                            <span onClick={()=> setTourRating(1)}>
-                                                <i class="ri-star-s-fill">1</i></span>
-                                            <span onClick={()=> setTourRating(2)}>
-                                                <i class="ri-star-s-fill">2</i></span>
-                                            <span onClick={()=> setTourRating(3)}>
-                                                <i class="ri-star-s-fill">3</i></span>
-                                            <span onClick={()=> setTourRating(4)}>
-                                                <i class="ri-star-s-fill">4</i></span>
-                                            <span onClick={()=> setTourRating(5)}>
-                                                <i class="ri-star-s-fill">5</i></span>
+                                        <div className="d-flex align-items-center gap-3 mb-4 rating__group">
+                                            <span onClick={() => setTourRating(1)}>
+                                                <i className="ri-star-s-fill" style={{ color: "yellow" }}></i>
+                                                <span style={{ color: "black", marginLeft: "4px" }}>1</span>
+                                            </span>
+                                            <span onClick={() => setTourRating(2)}>
+                                                <i className="ri-star-s-fill" style={{ color: "yellow" }}></i>
+                                                <span style={{ color: "black", marginLeft: "4px" }}>2</span>
+                                            </span>
+                                            <span onClick={() => setTourRating(3)}>
+                                                <i className="ri-star-s-fill" style={{ color: "yellow" }}></i>
+                                                <span style={{ color: "black", marginLeft: "4px" }}>3</span>
+                                            </span>
+                                            <span onClick={() => setTourRating(4)}>
+                                                <i className="ri-star-s-fill" style={{ color: "yellow" }}></i>
+                                                <span style={{ color: "black", marginLeft: "4px" }}>4</span>
+                                            </span>
+                                            <span onClick={() => setTourRating(5)}>
+                                                <i className="ri-star-s-fill" style={{ color: "yellow" }}></i>
+                                                <span style={{ color: "black", marginLeft: "4px" }}>5</span>
+                                            </span>
                                         </div>
+
 
                                         <div className="reviews__input">
                                             <input type="text" ref={reviewsMsgref} placeholder="share your thoughts" required />
@@ -123,11 +132,12 @@ const TourDetails = () => {
                                                             </p>
                                                         </div>
                                                         <span className="d-flex align-items-center">
-                                                            5 <i class="ri-star-s-fill"></i>
+                                                            5 <i class="ri-star-s-fill" style={{ color: "yellow" }}></i>
                                                         </span>
                                                     </div>
-                                                    <h6>Luar Biasa</h6>
+                                                    <h6>Luar Biasa Sekali Tempat Nya</h6>
                                                 </div>
+                                                
 
                                             </div>
 
@@ -140,12 +150,12 @@ const TourDetails = () => {
                             </div>
                         </Col>
                         <Col lg='4'>
-                        <Booking tour={tour} avgRating= {avgRating}/>
+                            <Booking tour={tour} avgRating={avgRating} />
                         </Col>
                     </Row>
                 </Container>
             </section>
-            <Newseletter/>
+            <Newseletter />
 
         </>
     );

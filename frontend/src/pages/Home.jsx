@@ -50,7 +50,7 @@ const Home = () => {
               </div>
             </Col>
             <Col lg="2">
-              <div className="hero__img-box">
+              <div className="hero__img-box ">
                 <img src={heroImg02} alt="Hero 2" />
               </div>
             </Col>
