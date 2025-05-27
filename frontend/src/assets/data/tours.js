@@ -25,9 +25,7 @@ const tours = [
     title: "Gunung Galunggung",
     city: "Tasikmalya",
     distance: 70,
-    address: 'Somewhere',
-    price: 20,
-    
+    price: 20.000,
     desc: "Gunung Galunggung merupakan gunung api dengan ketinggian 2.168 meter diatas permukaan laut, dengan puncak tertingginya yakni Puncak beuti Canar yang memiliki keitnggian 2240 mdpl. Gunung ini terletak sekitar 17 km dari ppusat kota Tasikmalaya, Jawa Barat",
     reviews: [
       {
@@ -44,7 +42,6 @@ const tours = [
     title: "Gunung Kedok",
     city: "Tasikmalaya",
     distance: 400,
-    address: 'Somewhere',
     price: 99,
     maxGroupSize: 8,
     desc: "this is the description",
@@ -61,12 +58,10 @@ const tours = [
   {
     id: "03",
     title: "Gunung Bangkok",
-    city: "Tasikmalaya",
-    distance: 500,
-    address: 'Somewhere',
-    price: 99,
-    maxGroupSize: 8,
-    desc: "this is the description",
+    city: "Karangnunggal",
+    distance: 70,
+    price: 12.000,
+    desc: "Gunung Bongkok adalah sebuah gunung yang terletak di perbatasan antara Kabupaten Tasikmalaya dan Kabupaten Ciamis, Jawa Barat. Gunung ini memiliki ketinggian 1.141 mter dari atas permukaan laut (Mdpl) dan merupakan puncak tertinggi di perbukitan Bengkok-Aseupan",
     reviews: [
       {
         name: "jhon doe",

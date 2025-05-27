@@ -18,7 +18,7 @@ const TourDetails = () => {
 
     const tour = tourData.find(tour => tour.id === id);
 
-    const { photo, title, desc, price, address, reviews, city, distance, } =
+    const { photo, title, desc, price,  reviews, city, distance, } =
         tour;
 
     const { totalrating, avgRating } = calculateAvgRating
@@ -67,13 +67,11 @@ const TourDetails = () => {
                                                 <span>({reviews.lenght})</span>
                                             )}
                                         </span>
-                                        <span>
-                                            <i class="ri-map-pin-user-fill"></i> {address}
-                                        </span>
+                                       
                                     </div>
                                     <div className="tour__extra-details">
                                         <span><i class="ri-map-pin-2-line"></i>{city}</span>
-                                        <span><i class="ri-money-dollar-circle-line"></i> Rp{price} / per person</span>
+                                        <span><i class="ri-money-dollar-circle-line"></i> Rp{price} k / per person</span>
                                         <span><i class="ri-map-pin-line"></i> {distance} k/m</span>
                                     </div>
                                     <h5>Description</h5>
