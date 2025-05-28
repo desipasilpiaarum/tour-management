@@ -245,11 +245,9 @@ const tours = [
     id: "014",
     title: "Curug Panetean",
     city: "Tasikmalaya",
-    distance: 500,
-    address: 'Somewhere',
-    price: 99,
-    maxGroupSize: 8,
-    desc: "this is the description",
+    distance: 70,
+    price: 15,
+    desc: "Salah satu lokasi wisata yang hits di wilayah Selatan Tasikmalaya yakni Curug Panetean. Disini pengunjung disuguh- kan wahana air di alam pegunungan. Curug-curug kecil yang berundak, mengalir di aliran sungai, menjadi daya tarik bagi pengunjung. Mungkin itulah salah satu alasan curug ini disebut Curug Panetean.",
     reviews: [
       {
         name: "jhon doe",
