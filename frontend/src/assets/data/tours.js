@@ -160,11 +160,9 @@ const tours = [
     id: "09",
     title: "Pantai Bubujung",
     city: "Tasikmalaya",
-    distance: 500,
-    address: 'Somewhere',
-    price: 99,
-    maxGroupSize: 8,
-    desc: "this is the description",
+    distance: 70,
+    price: 10,
+    desc: "Pantai Bubujung merupakan pantai yang terletak di Kecamatan Sindangkerta, Kabupaten Tasikmalaya, Jawa Barat. Meskipun tidak sepopuler pantai lain, Pantai Bubujung memiliki daya tarik berupa keindahan pasir putih dan air laut  yang jernih. Pantai ini memiliki pemandangan yang indah, terutama saat sore hari sehingga cocok untuk berfoto.",
    reviews: [
       {
         name: "jhon doe",
