@@ -177,11 +177,9 @@ const tours = [
     id: "010",
     title: "Pantai SindangKerta",
     city: "Tasikmalaya",
-    distance: 500,
-    address: 'Somewhere',
-    price: 99,
-    maxGroupSize: 8,
-    desc: "this is the description",
+    distance: 70,
+    price: 20,
+    desc: "Pantai Sindangkerta merupakan salah satu destinasi wisata bahari yang terletak di Kabupaten Tasikmalaya, Provinsi Jawa Barat. Pantai ini dikenal dengan hamparan pasir putihnya yang luas dan landai, serta panorama laut biru yang memukau. Keunikan utama Pantai Sindangkerta terletak pada keberadaan taman laut alami yang disebut “Taman Laut Sindangkerta”, di mana pengunjung dapat melihat aneka biota laut seperti ikan hias dan terumbu karang saat air surut. ",
     reviews: [
       {
         name: "jhon doe",
