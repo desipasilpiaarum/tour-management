@@ -126,11 +126,9 @@ const tours = [
     id: "07",
     title: "Pantai Cipatujah",
     city: "Tasikmalaya",
-    distance: 500,
-    address: 'Somewhere',
-    price: 99,
-    maxGroupSize: 8,
-    desc: "this is the description",
+    distance: 70,
+    price: 20,
+    desc: "Pantai Cipatujah merupakan salah satu pantai paling populer di Tasikmalaya. Pantai ini terletak di Kecamatan Cipatujah, Kabupaten Tasikmalaya, Jawa Barat. Pantai Cipatujah memiliki keindahan unik berupa pasir putih yang lembut dan air laut yang cukup jernih.",
     reviews: [
       {
         name: "jhon doe",
