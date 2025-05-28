@@ -143,11 +143,9 @@ const tours = [
     id: "08",
     title: "Pantai Karangtawulan",
     city: "Tasikmalaya",
-    distance: 500,
-    address: 'Somewhere',
-    price: 99,
-    maxGroupSize: 8,
-    desc: "this is the description",
+    distance: 70,
+    price: 10,
+    desc: "Pantai Karang Tawulan merupakan destinasi wisata yang bisa kamu kunjungi, mulai dari pagi sampai sore hari. Jadi Kamu bisa melihat panorama keindahan matahari terbit dan matahari terbenam.",
     reviews: [
       {
         name: "jhon doe",
