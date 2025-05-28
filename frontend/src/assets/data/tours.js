@@ -76,11 +76,9 @@ const tours = [
     id: "04",
     title: "Gunung Pin",
     city: "Tasikmalaya",
-    distance: 500,
-    address: 'Somewhere',
-    price: 99,
-    maxGroupSize: 8,
-    desc: "this is the description",
+    distance: 70,
+    price: 20,
+    desc: "Gunung Pin terletak di Dusun RT 19 RW 05, Desa Cikondang Kecamatan Cineam, Kabupaten Tasikmalaya, ssat ini sudah mulai ramai dikunjungi, banyak warga naik kebukit tersebut yang hanya ingin melihat pemandangan awan dan menikmati udaranya yang sejuk juga segar sekaligus menambah imunitas tubuh.",
     reviews: [
       {
         name: "jhon doe",
