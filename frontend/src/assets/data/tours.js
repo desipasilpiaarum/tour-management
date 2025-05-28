@@ -194,11 +194,9 @@ const tours = [
     id: "011",
     title: "Curug Dengdeng",
     city: "Tasikmalaya",
-    distance: 500,
-    address: 'Somewhere',
-    price: 99,
-    maxGroupSize: 8,
-    desc: "this is the description",
+    distance: 70,
+    price: 15,
+    desc: "Curug Dengdeng merupakan air terjun berundak yang berbentuk seperti sawah dengan sistemperairan terasering. Curug yang terletak di Desa Tawang ini memiliki 3 tingkatan yang berbeda. Curug Dengdeng memiliki ketinggian hampir 33 meter secara menyeluruh.",
     reviews: [
       {
         name: "jhon doe",
