@@ -41,10 +41,9 @@ const tours = [
     id: "02",
     title: "Gunung Kedok",
     city: "Tasikmalaya",
-    distance: 400,
-    price: 99,
-    maxGroupSize: 8,
-    desc: "this is the description",
+    distance: 70,
+    price: 10,
+    desc: "Gunung Kedok adalah sebuah gunung yang terletak di perbatasan antara Kabupaten Tasikmalaya dan Kabupaten Ciamis, Jawa Barat. Gunung ini memiliki ketinggian 1.141 mter dari atas permukaan laut (Mdpl) dan merupakan puncak tertinggi di perbukitan",
     reviews: [
       {
         name: "jhon doe",
