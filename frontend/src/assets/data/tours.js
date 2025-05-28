@@ -262,11 +262,9 @@ const tours = [
     id: "015",
     title: "Bukit Kacapi",
     city: "Tasikmalaya",
-    distance: 500,
-    address: 'Somewhere',
-    price: 99,
-    maxGroupSize: 8,
-    desc: "this is the description",
+    distance: 70,
+    price: 10,
+    desc: "Bukit Kacapi merupakan hamparan perkebunan teh dengan pemandangan pegunungan serta perbukitan hijau. Bukit Kacapi cocok dijadikan tempat bersantai bersama keluarga, terdapat kolam renang di atas bukitnya.",
    reviews: [
       {
         name: "jhon doe",
