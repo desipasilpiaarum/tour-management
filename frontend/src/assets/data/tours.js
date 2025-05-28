@@ -211,11 +211,9 @@ const tours = [
     id: "012",
     title: "Curug Sawer",
     city: "Tasikmalaya",
-    distance: 500,
-    address: 'Somewhere',
-    price: 99,
-    maxGroupSize: 8,
-    desc: "this is the description",
+    distance: 70,
+    price: 10,
+    desc: "Namanya, Curug Sawer yang berada di Kampung Cibeureum, Desa Mandalamekar, Kecamatan Jatiwaras, Kabupaten Tasikmalaya, Provinsi Jawa Barat. Objek wisata air terjun yang menyuguhkan pemandangan alam  menakjubkan. Karena keindahannya mirip dengan pesona air terjun New Delhi di India, banyak wisatawan memberi julukan “Delhi van Java”.",
     reviews: [
       {
         name: "jhon doe",
