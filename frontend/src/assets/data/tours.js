@@ -93,11 +93,9 @@ const tours = [
     id: "05",
     title: "Gunung Cakrabuana ",
     city: "Tasikmalaya",
-    distance: 500,
-    address: 'Somewhere',
-    price: 99,
-    maxGroupSize: 8,
-    desc: "this is the description",
+    distance: 70,
+    price: 25,
+    desc: "Gunung Cakrabuana adalah satu gunung ikonik yeng terletak diantara tiga kabupaten, yaitu kabupaten garut, majalengka, dan tasikmalaya di jawa barat. keindahan alamnya yang masih asri serta jalur pendakian yang menantang membuatnya menjadi tujuan favorit bagi para petualang.",
     reviews: [
       {
         name: "jhon doe",
