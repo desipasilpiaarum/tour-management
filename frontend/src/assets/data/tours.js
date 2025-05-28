@@ -112,11 +112,9 @@ const tours = [
     id: "06",
     title: "Gunung Marindo",
     city: "Tasikmalaya",
-    distance: 500,
-    address: 'Somewhere',
-    price: 99,
-    maxGroupSize: 8,
-    desc: "this is the description",
+    distance: 70,
+    price: 10,
+    desc: "Gunung Marindo terletak di Gunung, Kecamtan Parungponteng, Kabupaten Tasikmalaya Jawa Barat, Destinasi ini sudah biasa dijadikan sebagai tempat camping di Tasikmalya",
     reviews: [
       {
         name: "jhon doe",
