@@ -228,11 +228,9 @@ const tours = [
     id: "013",
     title: "Curug Badak",
     city: "Tasikmalaya",
-    distance: 500,
-    address: 'Somewhere',
-    price: 99,
-    maxGroupSize: 8,
-    desc: "this is the description",
+    distance: 70,
+    price: 10,
+    desc: "Curug Badak, salah satu destinasi wisata pilihan yang sangat cocok untuk refresing liburan tahun baru di Tasikmalaya.  Curug Badak, resmi dibuka pada tahun 2016, terletak di kawasan Gunung Talaga Bodas. Kampung Setiamulya,  Kecamatan Cisayong, Kabupaten Tasikmalaya, Jawa Barat.",
     reviews: [
       {
         name: "jhon doe",
