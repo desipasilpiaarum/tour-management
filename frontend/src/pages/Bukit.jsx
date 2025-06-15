@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import CommonSection from "../shared/CommonSection";
+import CommonSectionBukit from "../shared/CommonSectionBukit";
 import TourCard from "../shared/TourCard";
 import tourData from "../assets/data/tours";
 
@@ -11,7 +11,7 @@ const Bukit = () => {
 
   return (
     <>
-      <CommonSection title="Wisata Bukit" />
+      <CommonSectionBukit title="Wisata Bukit" />
       <section>
         <Container>
           <Row>

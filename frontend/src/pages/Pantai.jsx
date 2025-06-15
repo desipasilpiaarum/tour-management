@@ -1,7 +1,7 @@
 // pages/Pantai.jsx
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import CommonSection from "../shared/CommonSection";
+import CommonSectionPantai from "../shared/Common-SectionPantai";
 import TourCard from "../shared/TourCard";
 import tourData from "../assets/data/tours";
 
@@ -12,7 +12,7 @@ const Pantai = () => {
 
   return (
     <>
-      <CommonSection title="Wisata Pantai" />
+      <CommonSectionPantai title="Wisata Pantai" />
       <section>
         <Container>
           <Row>

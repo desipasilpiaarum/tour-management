@@ -59,7 +59,7 @@ const Tours = () => {
         <Col><h2>{title}</h2></Col>
         <Col className="text-end">
           <Link to={link}>
-            <button className="btn btn-primary btn-sm">See All</button>
+            <button className="btn btn-primary btn-sm">Wisata Kita</button>
           </Link>
         </Col>
       </Row>
@@ -71,7 +71,7 @@ const Tours = () => {
 
   return (
     <>
-      <CommonSection title="All Tours" />
+      <CommonSection title="Wisata Kita" />
 
       {/* Search */}
       <section>

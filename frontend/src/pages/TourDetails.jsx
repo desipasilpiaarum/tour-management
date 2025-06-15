@@ -47,7 +47,7 @@ const TourDetails = () => {
             <section>
                 <Container>
                     <Row>
-                        <Col lg='8'>
+                        
                             <div className="tour__content">
                                 <img src={photo} alt="" />
 
@@ -124,7 +124,7 @@ const TourDetails = () => {
                                                 <div className="w-100">
                                                     <div className="d-flex align-items-center justify-content-between">
                                                         <div>
-                                                            <h5>desipa</h5>
+                                                            <h5>Ms.Dania</h5>
                                                             <p>
                                                                 {new Date("2025-03-01").toLocaleDateString("en-US", options)}
                                                             </p>
@@ -146,7 +146,7 @@ const TourDetails = () => {
                                 {/*============================ tour reviews section end========================== */}
 
                             </div>
-                        </Col>
+                       
                         <Col lg='4'>
                             <Booking tour={tour} avgRating={avgRating} />
                         </Col>

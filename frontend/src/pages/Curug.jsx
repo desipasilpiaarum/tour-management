@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import CommonSection from "../shared/CommonSection";
 import TourCard from "../shared/TourCard";
 import tourData from "../assets/data/tours";
+import CommonSectionCurug from "../shared/CommonSectionCurug";
 
 const Curug = () => {
   const curugTours = tourData.filter(tour =>
@@ -12,7 +12,7 @@ const Curug = () => {
 
   return (
     <>
-      <CommonSection title="Wisata Air Terjun" />
+      <CommonSectionCurug title="Wisata Air Terjun" />
       <section>
         <Container>
           <Row>
