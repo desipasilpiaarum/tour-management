@@ -104,18 +104,7 @@ const Header = () => {
                 ))}
                 {!isLoggedIn ? (
                   <>
-                    <li className="nav__item">
-                      <NavLink to="/login" onClick={() => setIsMenuOpen(false)}>
-                        <button className="btn btn-primary" type="button">
-                          Login
-                        </button>
-                      </NavLink>
-                    </li>
-                    <li className="nav__item">
-                      <NavLink to="/register" onClick={() => setIsMenuOpen(false)}>
-                        Register
-                      </NavLink>
-                    </li>
+                    
                   </>
                 ) : (
                   <li className="nav__item">

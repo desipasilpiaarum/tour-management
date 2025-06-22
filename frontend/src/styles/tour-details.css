@@ -1,8 +1,10 @@
-.tour__content img{
-    width: 100%;
+.tour__content img {
+    width: 75%;
     border-radius: 0.5rem;
-    margin-bottom: 2.5rem;
+    margin: 0 auto 2.5rem auto; /* atas 0, kanan auto, bawah 2.5rem, kiri auto */
+    display: block;             /* supaya margin auto berfungsi */
 }
+
 
 .tour__info, .tour__reviews{
     border-radius: 0.5rem;

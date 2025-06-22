@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "reactstrap";
-import CommonSection from "../shared/CommonSection";
+import CommonSection from "../shared/CommonSectionCurug";
 import TourCard from "../shared/TourCard";
 
 const API_URL = "http://localhost:5000/api/tours";

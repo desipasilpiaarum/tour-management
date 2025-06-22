@@ -105,7 +105,7 @@ const TourDetails = () => {
       <section>
         <Container>
           <Row>
-            <Col lg="8">
+            
               <div className="tour__content">
                 <img
                   src={
@@ -223,7 +223,7 @@ const TourDetails = () => {
                 </div>
                 {/*============================ tour reviews section end========================== */}
               </div>
-            </Col>
+            
             <Col lg="4">
               <Booking tour={tour} avgRating={avgRating} />
             </Col>

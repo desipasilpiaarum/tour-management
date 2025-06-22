@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "reactstrap";
 
 import "../styles/home.css";
@@ -15,8 +15,39 @@ import FeatureTourList from "../components/Featured-tours/FeatureTourList";
 import MasonryImagesGallery from "../components/image-gallery/MasonryImagesGallery";
 import Testimonials from "../components/Testimonial/Testimonials";
 import Newseletter from "../shared/Newseletter";
+import SearchBar from "../shared/SearchBar";
+import TourCard from "../shared/TourCard";
 
 const Home = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [tours, setTours] = useState([]);
+
+  // Fetch data wisata
+  useEffect(() => {
+    fetch("http://localhost:5000/api/tours")
+      .then(res => res.json())
+      .then(data => setTours(data))
+      .catch(() => setTours([]));
+  }, []);
+
+  const handleSearch = (term) => {
+    setSearchTerm(term);
+  };
+
+  const lowerSearch = searchTerm.trim().toLowerCase();
+  const filteredTours = tours.filter((tour) => {
+    const title = (tour.title || "").toLowerCase();
+    const location = (tour.location || "").toLowerCase();
+    const description = (tour.description || "").toLowerCase();
+    const category = (tour.category || "").toLowerCase();
+    return (
+      title.includes(lowerSearch) ||
+      location.includes(lowerSearch) ||
+      description.includes(lowerSearch) ||
+      category.includes(lowerSearch)
+    );
+  });
+
   return (
     <>
       {/*============= Hero Section Start ============*/}
@@ -86,31 +117,56 @@ const Home = () => {
         </Container>
       </section>
 
-      {/*============ Service Section ============*/}
-      <section>
+      {/*============ Search Bar Section ============*/}
+      <section className="my-4">
         <Container>
           <Row>
-            <ServiceList />
+            <Col lg="12">
+              <SearchBar onSearch={handleSearch} />
+            </Col>
           </Row>
         </Container>
       </section>
+
+      {/*============ Filtered Results Section ============*/}
+      {lowerSearch !== "" && (
+        <section className="my-4">
+          <Container>
+            {filteredTours.length > 0 ? (
+              <Row>
+                {filteredTours.map((tour) => (
+                  <Col lg="3" className="mb-4" key={tour.id}>
+                    <TourCard tour={tour} />
+                  </Col>
+                ))}
+              </Row>
+            ) : (
+              <Row className="text-center">
+                <Col>
+                  <h5>Tidak ditemukan destinasi untuk “{searchTerm}”</h5>
+                </Col>
+              </Row>
+            )}
+          </Container>
+        </section>
+      )}
 
       {/*============ Featured Tours Section ============*/}
-      <section>
-        <Container>
-          <Row>
-            <Col lg="12" className="mb-5">
-              <div className="experience__content">
-                <h1>Jelajahi</h1>
-                <h2 className="featured__tour-title">Wisata Unggulan Kita</h2>
-              </div>
-            </Col>
-            <FeatureTourList />
-          </Row>
-        </Container>
-      </section>
-
-
+      {lowerSearch === "" && (
+        <section>
+          <Container>
+            <Row>
+              <Col lg="12" className="mb-5">
+                <div className="experience__content">
+                  <h1>Jelajahi</h1>
+                  <h2 className="featured__tour-title">Wisata Unggulan Kita</h2>
+                </div>
+              </Col>
+              <FeatureTourList />
+            </Row>
+          </Container>
+        </section>
+      )}
 
       <Newseletter />
 

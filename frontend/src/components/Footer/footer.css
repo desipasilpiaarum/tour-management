@@ -1,46 +1,38 @@
-
-.footer{
-    
-    padding-top: 70px;
-    padding-bottom: 30px;
+.footer {
+  background-color: #007bff; /* Warna biru */
+  padding: 5rem 1rem;
+  color: #fff;
 }
 
-.footer.logo img{
-    width: 50%;
-    margin-bottom: 1rem;
+.footer .logo p,
+.footer .social__links i {
+  color: #fff;
 }
 
-.footer.logo p{
-    color: var(--text-color);
+.footer__quick-links,
+.footer__quick-links li,
+.footer__quick-links li a {
+  background: transparent !important;
+  border: none !important;
+  color: #fff !important;
 }
 
-.social__links span a{
-    text-decoration: none;
-    color: var(--heading-color);
-    font-size: 1.2rem;
+.footer__quick-links a:hover {
+  text-decoration: underline;
+  color: #f0f0f0 !important;
 }
 
-.footer__link-title{
-    
-    color: var(--heading-color);
-    margin-bottom: 1rem;
+.footer__link-title {
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
-.footer__quick-links li a{
-    text-decoration: none;
-    color: var(--text-color);
-    font-size:1.1rem ;
-
+.footer__quick-links h6,
+.footer__quick-links p {
+  color: #fff;
 }
 
-.footer__quick-links h6 span i{
-    
-   
-    color: var(--secondary-color);
-    font-size: 1.1rem;
-}
-
-.copyright{
-    color: var(--text-color);
-    font-size: 1.1rem;
+.footer__quick-links span i {
+  color: #fff;
 }

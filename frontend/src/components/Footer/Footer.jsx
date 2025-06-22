@@ -29,20 +29,7 @@ const Footer = () => {
                         <div className="logo">
                             <img src={logo} alt="" />
                             <p>Bersama kami ciptakan liburan yang luar biasa</p>
-                            <div className="social__links d-flex align-items-center gap-4">
-                                <span>
-                                    <Link to='#'><i class="ri-youtube-line"></i></Link>
-                                </span>
-                                <span>
-                                    <Link to='#'><i class="ri-github-fill"></i></Link>
-                                </span>
-                                <span>
-                                    <Link to='#'><i class="ri-facebook-fill"></i></Link>
-                                </span>
-                                <span>
-                                    <Link to='#'><i class="ri-instagram-line"></i></Link>
-                                </span>
-                            </div>
+                            
                         </div>
                     </Col>
                     <Col lg='4'>
