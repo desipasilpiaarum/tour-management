@@ -110,23 +110,7 @@ const Home = () => {
         </Container>
       </section>
 
-      {/*============ Gallery Section ============*/}
-      <section>
-        <Container>
-          <Row>
-            <MasonryImagesGallery />
-          </Row>
-        </Container>
-      </section>
 
-      {/*============ Testimonials Section ============*/}
-      <section>
-        <Container>
-          <Row>
-            <Testimonials />
-          </Row>
-        </Container>
-      </section>
 
       <Newseletter />
 
