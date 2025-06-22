@@ -1,18 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "reactstrap";
-import CommonSectionGunung from "../shared/CommonSectionGunung";
+import CommonSection from "../shared/CommonSection";
 import TourCard from "../shared/TourCard";
-import tourData from "../assets/data/tours";
 
+const API_URL = "http://localhost:5000/api/tours";
 
 const Gunung = () => {
-  const gunungTours = tourData.filter(tour =>
-    tour.title.toLowerCase().includes("gunung")
-  );
+  const [gunungTours, setGunungTours] = useState([]);
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(data => {
+        const filtered = data.filter(
+          tour => tour.category && tour.category.toLowerCase() === "pegunungan"
+        );
+        setGunungTours(filtered);
+      })
+      .catch(() => setGunungTours([]));
+  }, []);
 
   return (
     <>
-      <CommonSectionGunung title="Wisata Pegunungan" />
+      <CommonSection title="Wisata Pegunungan" />
       <section>
         <Container>
           <Row>

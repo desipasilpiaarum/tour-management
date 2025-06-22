@@ -5,31 +5,28 @@ import TourCard from "../shared/TourCard";
 
 const API_URL = "http://localhost:5000/api/tours";
 
-const Curug = () => {
-  const [curugTours, setCurugTours] = useState([]);
+const Umum = () => {
+  const [umumTours, setUmumTours] = useState([]);
 
   useEffect(() => {
     fetch(API_URL)
       .then(res => res.json())
       .then(data => {
         const filtered = data.filter(
-          tour =>
-            tour.category &&
-            (tour.category.toLowerCase() === "air terjun" ||
-             tour.category.toLowerCase() === "curug")
+          tour => tour.category && tour.category.toLowerCase() === "umum"
         );
-        setCurugTours(filtered);
+        setUmumTours(filtered);
       })
-      .catch(() => setCurugTours([]));
+      .catch(() => setUmumTours([]));
   }, []);
 
   return (
     <>
-      <CommonSection title="Wisata Air Terjun" />
+      <CommonSection title="Wisata Lainnya" />
       <section>
         <Container>
           <Row>
-            {curugTours.map((tour) => (
+            {umumTours.map((tour) => (
               <Col lg="3" className="mb-4" key={tour.id}>
                 <TourCard tour={tour} />
               </Col>
@@ -41,4 +38,4 @@ const Curug = () => {
   );
 };
 
-export default Curug;
+export default Umum;

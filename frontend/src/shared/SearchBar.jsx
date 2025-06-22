@@ -8,12 +8,11 @@ const SearchBar = ({ onSearch }) => {
   const searchHandler = (e) => {
     e.preventDefault();
     const location = locationRef.current.value.trim();
-    if (location === "") return alert("Lokasi harus diisi!");
     onSearch(location.toLowerCase());
   };
 
   return (
-    <Col lg="12">
+    <Col lg="6">
       <div className="search__bar__wrapper">
         <Form onSubmit={searchHandler} className="search__bar__form">
           <div className="search__input__group">
@@ -21,11 +20,12 @@ const SearchBar = ({ onSearch }) => {
               <i className="ri-map-pin-line"></i>
             </span>
             <div className="text__group">
-              <h6>Lokasi</h6>
+              <h6>Destinasi</h6>
               <input
                 type="text"
-                placeholder="Cari: pantai, gunung, curug, bukit..."
+                placeholder="Cari destinasi"
                 ref={locationRef}
+                onChange={() => onSearch(locationRef.current.value.trim().toLowerCase())}
               />
             </div>
           </div>

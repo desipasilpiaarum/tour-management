@@ -1,18 +1,28 @@
-// pages/Pantai.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "reactstrap";
-import CommonSectionPantai from "../shared/Common-SectionPantai";
+import CommonSection from "../shared/CommonSection";
 import TourCard from "../shared/TourCard";
-import tourData from "../assets/data/tours";
+
+const API_URL = "http://localhost:5000/api/tours";
 
 const Pantai = () => {
-  const pantaiTours = tourData.filter(tour =>
-    tour.title.toLowerCase().includes("pantai")
-  );
+  const [pantaiTours, setPantaiTours] = useState([]);
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(data => {
+        const filtered = data.filter(
+          tour => tour.category && tour.category.toLowerCase() === "pantai"
+        );
+        setPantaiTours(filtered);
+      })
+      .catch(() => setPantaiTours([]));
+  }, []);
 
   return (
     <>
-      <CommonSectionPantai title="Wisata Pantai" />
+      <CommonSection title="Wisata Pantai" />
       <section>
         <Container>
           <Row>

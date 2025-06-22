@@ -1,11 +1,8 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import { Container, Row, Col } from "reactstrap";
 
-import "../styles/home.css"; // pastikan ini tetap ada jika ada style lain
+import "../styles/home.css";
 
-import SearchBar from "../shared/SearchBar";
-import tourData from "../assets/data/tours";
 import heroImg from "../assets/images/hero-img01.jpeg";
 import heroImg02 from "../assets/images/hero-img02.jpeg";
 import heroVideo from "../assets/images/hero-video1.mp4";
@@ -20,19 +17,6 @@ import Testimonials from "../components/Testimonial/Testimonials";
 import Newseletter from "../shared/Newseletter";
 
 const Home = () => {
-  const navigate = useNavigate();
-  const [filteredTours, setFilteredTours] = useState([]);
-
-  const handleSearch = (location) => {
-    const keyword = location.toLowerCase();
-    const results = tourData.filter((tour) =>
-      tour.title.toLowerCase().includes(keyword)
-    );
-
-    setFilteredTours(results);
-    navigate("/tours", { state: { results } });
-  };
-
   return (
     <>
       {/*============= Hero Section Start ============*/}
@@ -76,14 +60,7 @@ const Home = () => {
           </Row>
         </Container>
       </section>
-      {/* Search Bar */}
-      <section>
-        <Container>
-          <Row>
-            <SearchBar onSearch={handleSearch} />
-          </Row>
-        </Container>
-      </section>
+
       {/*============ Experience Section ============*/}
       <section>
         <Container>
@@ -109,6 +86,15 @@ const Home = () => {
         </Container>
       </section>
 
+      {/*============ Service Section ============*/}
+      <section>
+        <Container>
+          <Row>
+            <ServiceList />
+          </Row>
+        </Container>
+      </section>
+
       {/*============ Featured Tours Section ============*/}
       <section>
         <Container>
@@ -120,6 +106,24 @@ const Home = () => {
               </div>
             </Col>
             <FeatureTourList />
+          </Row>
+        </Container>
+      </section>
+
+      {/*============ Gallery Section ============*/}
+      <section>
+        <Container>
+          <Row>
+            <MasonryImagesGallery />
+          </Row>
+        </Container>
+      </section>
+
+      {/*============ Testimonials Section ============*/}
+      <section>
+        <Container>
+          <Row>
+            <Testimonials />
           </Row>
         </Container>
       </section>

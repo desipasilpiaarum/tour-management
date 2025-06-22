@@ -1,21 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "reactstrap";
-import CommonSectionBukit from "../shared/CommonSectionBukit";
+import CommonSection from "../shared/CommonSection";
 import TourCard from "../shared/TourCard";
-import tourData from "../assets/data/tours";
+
+const API_URL = "http://localhost:5000/api/tours";
 
 const Bukit = () => {
-  const bukitTours = tourData.filter(tour =>
-    tour.title.toLowerCase().includes("bukit")
-  );
+  const [bukitTours, setBukitTours] = useState([]);
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(data => {
+        const filtered = data.filter(
+          tour => tour.category && tour.category.toLowerCase() === "bukit"
+        );
+        setBukitTours(filtered);
+      })
+      .catch(() => setBukitTours([]));
+  }, []);
 
   return (
     <>
-      <CommonSectionBukit title="Wisata Bukit" />
+      <CommonSection title="Wisata Bukit" />
       <section>
         <Container>
           <Row>
-            {bukitTours.map(tour => (
+            {bukitTours.map((tour) => (
               <Col lg="3" className="mb-4" key={tour.id}>
                 <TourCard tour={tour} />
               </Col>

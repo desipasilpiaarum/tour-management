@@ -1,4 +1,4 @@
-import tourImg01 from "../images/gakunggung.png";
+import tourImg01 from "../images/galunggung.png";
 import tourImg02 from "../images/kedok.png";
 import tourImg03 from "../images/bongkok.png";
 import tourImg04 from "../images/pin.png";

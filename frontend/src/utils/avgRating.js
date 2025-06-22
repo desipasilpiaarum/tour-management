@@ -5,7 +5,7 @@ const calculateAvgRating = reviews=>{
             ? "" 
             : totalRating === 1 
             ? totalRating 
-            : (totalRating / reviews?.length).toFixed(1)// Menampilkan hasil dengan 1 angka di belakang koma
+            : (totalRating / reviews?.length).toFixed(1)
         
     return {
         totalRating,

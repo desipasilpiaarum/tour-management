@@ -1,45 +1,69 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 import CommonSection from "../shared/CommonSection";
 import SearchBar from "../shared/SearchBar";
 import TourCard from "../shared/TourCard";
 import Newseletter from "../shared/Newseletter";
-import tourData from "../assets/data/tours";
 import "../styles/tour.css";
 
+const API_URL = "http://localhost:5000/api/tours";
+
 const Tours = () => {
+  const [tours, setTours] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then(res => res.json())
+      .then(data => setTours(data))
+      .catch(() => setTours([]));
+  }, []);
 
   const handleSearch = (term) => {
     setSearchTerm(term);
   };
 
-  
-  const gunungToursAll = tourData.filter(tour =>
-    tour.title.toLowerCase().includes("gunung")
-  );
+  // Filter search: nama, lokasi, deskripsi, kategori (case-insensitive)
+  const lowerSearch = searchTerm.trim().toLowerCase();
+  const filteredTours = tours.filter((tour) => {
+    const title = (tour.title || "").toLowerCase();
+    const location = (tour.location || "").toLowerCase();
+    const description = (tour.description || "").toLowerCase();
+    const category = (tour.category || "").toLowerCase();
+    return (
+      title.includes(lowerSearch) ||
+      location.includes(lowerSearch) ||
+      description.includes(lowerSearch) ||
+      category.includes(lowerSearch)
+    );
+  });
 
-  const pantaiToursAll = tourData.filter(tour =>
-    tour.title.toLowerCase().includes("pantai")
-  );
+  // Filter berdasarkan kategori (case-insensitive)
+  const filterByCategory = (category) =>
+    tours.filter(
+      (tour) =>
+        tour.category &&
+        tour.category.toLowerCase() === category.toLowerCase()
+    );
 
-  const curugToursAll = tourData.filter(tour =>
-    tour.title.toLowerCase().includes("curug") ||
-    tour.title.toLowerCase().includes("air terjun") ||
-    tour.title.toLowerCase().includes("sindang")
+  const pantaiToursAll = filterByCategory("Pantai");
+  const gunungToursAll = filterByCategory("Pegunungan");
+  const curugToursAll = tours.filter(
+    (tour) =>
+      tour.category &&
+      (tour.category.toLowerCase() === "air terjun" ||
+        tour.category.toLowerCase() === "curug")
   );
-
-  const bukitToursAll = tourData.filter(tour =>
-    tour.title.toLowerCase().includes("bukit")
-  );
-
+  const bukitToursAll = filterByCategory("Bukit");
+  const umumToursAll = filterByCategory("Umum");
 
   const gunungTours = gunungToursAll.slice(0, 4);
   const pantaiTours = pantaiToursAll.slice(0, 4);
   const curugTours = curugToursAll.slice(0, 4);
   const bukitTours = bukitToursAll.slice(0, 4);
+  const umumTours = umumToursAll.slice(0, 4);
 
   const renderTours = (tours) => (
     <Row>
@@ -59,7 +83,7 @@ const Tours = () => {
         <Col><h2>{title}</h2></Col>
         <Col className="text-end">
           <Link to={link}>
-            <button className="btn btn-primary btn-sm">Wisata Kita</button>
+            <button className="btn btn-primary btn-sm">See All</button>
           </Link>
         </Col>
       </Row>
@@ -67,11 +91,9 @@ const Tours = () => {
     </>
   );
 
-  const lowerSearch = searchTerm.toLowerCase();
-
   return (
     <>
-      <CommonSection title="Wisata Kita" />
+      <CommonSection title="All Tours" />
 
       {/* Search */}
       <section>
@@ -85,32 +107,40 @@ const Tours = () => {
       {/* List Wisata */}
       <section className="pt-0">
         <Container>
-          {/* Jika tidak sedang mencari */}
+          {/* Jika search kosong, tampilkan per kategori */}
           {lowerSearch === "" && (
             <>
               {renderSection("Pantai", "/pantai", pantaiTours)}
               {renderSection("Pegunungan", "/gunung", gunungTours)}
               {renderSection("Air Terjun", "/curug", curugTours)}
               {renderSection("Bukit", "/bukit", bukitTours)}
+              {renderSection("Umum", "/umum", umumTours)}
             </>
           )}
 
-          {/* Jika ada pencarian */}
-          {lowerSearch === "pantai" && renderSection("Pantai", "/pantai", pantaiToursAll)}
-          {lowerSearch === "gunung" && renderSection("Pegunungan", "/gunung", gunungToursAll)}
-          {(lowerSearch === "curug" || lowerSearch === "air terjun" || lowerSearch === "sindang") &&
-            renderSection("Air Terjun", "/curug", curugToursAll)}
-          {lowerSearch === "bukit" && renderSection("Bukit", "/bukit", bukitToursAll)}
-
-          {/* Jika kategori tidak ditemukan */}
-          {lowerSearch &&
-            !["pantai", "gunung", "curug", "air terjun", "sindang", "bukit"].includes(lowerSearch) && (
-              <Row className="text-center">
-                <Col>
-                  <h5>Kategori “{searchTerm}” tidak ditemukan.</h5>
-                </Col>
-              </Row>
-            )}
+          {/* Jika search ada, tampilkan hasil pencarian */}
+          {lowerSearch !== "" && (
+            <>
+              {filteredTours.length > 0 ? (
+                <>
+                  <Row className="mb-3">
+                    <Col>
+                      <h5>
+                        Hasil pencarian untuk: <b>{searchTerm}</b>
+                      </h5>
+                    </Col>
+                  </Row>
+                  {renderTours(filteredTours)}
+                </>
+              ) : (
+                <Row className="text-center">
+                  <Col>
+                    <h5>Tidak ditemukan destinasi dengan kata kunci “{searchTerm}”.</h5>
+                  </Col>
+                </Row>
+              )}
+            </>
+          )}
         </Container>
       </section>
 
