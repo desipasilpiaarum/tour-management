@@ -78,9 +78,8 @@ const Header = () => {
           <div className="nav__wrapper d-flex align-items-center justify-content-between">
             {/* Logo */}
             <div className="logo">
-              <Link to={isLoggedIn ? (userRole === "admin" ? "/dashboard" : "/home") : "/login"}>
-                <img src={logo} alt="Logo" className="logo__img" />
-              </Link>
+               <img src={logo} alt="Logo" className="logo__img" />
+             
             </div>
             {/* Hamburger button */}
             <div className="mobile__menu d-md-none" onClick={toggleMenu}>
