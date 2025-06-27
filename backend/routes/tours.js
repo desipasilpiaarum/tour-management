@@ -71,4 +71,45 @@ router.delete("/:id", async (req, res) => {
   }
 });
 
+// POST review
+router.post("/:id/reviews", async (req, res) => {
+  const tourId = req.params.id;
+  const { rating, text } = req.body;
+  let username = "Anonim";
+  const date = new Date();
+
+  // Ambil username dari JWT jika login
+  try {
+    if (req.cookies && req.cookies.token) {
+      const JWT_SECRET = process.env.JWT_SECRET;
+      const decoded = jwt.verify(req.cookies.token, JWT_SECRET);
+      if (decoded && decoded.username) {
+        username = decoded.username;
+      }
+    }
+  } catch (err) {
+    // Jika token invalid, tetap pakai "Anonim"
+  }
+
+  try {
+    await db.query(
+      "INSERT INTO reviews (tour_id, username, rating, text, date) VALUES (?, ?, ?, ?, ?)",
+      [tourId, username, rating, text, date]
+    );
+    res.json({ message: "Review berhasil ditambahkan" });
+  } catch (err) {
+    res.status(500).json({ error: "Gagal menambah review" });
+  }
+});
+
+// GET latest reviews (untuk homepage)
+router.get("/reviews/all", async (req, res) => {
+  try {
+    const [rows] = await db.query("SELECT id, username, text FROM reviews ORDER BY date DESC LIMIT 12");
+    res.json(rows);
+  } catch (err) {
+    res.status(500).json({ error: "Gagal mengambil data review" });
+  }
+});
+
 module.exports = router;
