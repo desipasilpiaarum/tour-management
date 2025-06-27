@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
 const authRoutes = require("./routes/auth");
+const toursRoutes = require("./routes/tours");
 
 const app = express();
 
@@ -23,6 +24,9 @@ app.use(cookieParser());
 
 // Routing utama untuk autentikasi
 app.use("/api/auth", authRoutes);
+
+// Routing untuk CRUD destinasi wisata
+app.use("/api/tours", toursRoutes);
 
 // Jalankan server
 const PORT = process.env.PORT || 5000;
