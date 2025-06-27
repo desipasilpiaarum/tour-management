@@ -9,6 +9,20 @@ const router = express.Router();
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
+// Middleware untuk verifikasi token JWT dari cookie
+const verifyToken = (req, res, next) => {
+  const token = req.cookies.token;
+  if (!token) return res.status(401).json({ message: "Unauthorized" });
+
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET);
+    req.user = decoded;
+    next();
+  } catch (err) {
+    return res.status(401).json({ message: "Invalid token" });
+  }
+};
+
 // REGISTER
 router.post("/register", async (req, res) => {
   const { username, email, password } = req.body;
@@ -69,7 +83,7 @@ router.post("/login", async (req, res) => {
     res
       .cookie("token", token, {
         httpOnly: true,
-        secure: false,
+        secure: false, // ubah true jika dihosting dengan HTTPS
         sameSite: "Lax",
         maxAge: 24 * 60 * 60 * 1000,
       })
@@ -92,6 +106,14 @@ router.post("/logout", (req, res) => {
       secure: false,
     })
     .json({ message: "Logged out successfully" });
+});
+
+// ME
+router.get("/me", verifyToken, (req, res) => {
+  const { id, username, email, role } = req.user;
+  res.json({
+    user: { id, username, email, role },
+  });
 });
 
 module.exports = router;
